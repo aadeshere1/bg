@@ -47,6 +47,15 @@ jobs:
           ref: 'develop'
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: mkdir
+        run: mkdir staging
+      - name: copy all
+        run: cp index.html staging/index.html
+      - name: setup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging
+          path: staging/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
