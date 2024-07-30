@@ -56,13 +56,8 @@ jobs:
         with:
           name: staging
           path: staging/index.html
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     # Upload entire repository
-      #     path: './staging'
-      - name: Deploy to GitHub Pages
-        id: deploystaging
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          artifact_name: staging
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: staging
