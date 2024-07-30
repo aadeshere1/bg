@@ -53,5 +53,5 @@ jobs:
           # Upload entire repository
           path: './staging'
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploystaging
         uses: actions/deploy-pages@v4
